@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.carproject.MainController"
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="License Plate:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="licensePlateField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Year:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="yearField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button fx:id="addButton" text="Add Car" onAction="#handleAddCar"/>
+        <Button fx:id="editButton" text="Edit Car" onAction="#handleEditCar"/>
+        <Button fx:id="updateButton" text="Update Car" onAction="#handleUpdateCar"/>
+        <Button fx:id="cancelButton" text="Cancel Edit" onAction="#handleCancelEdit"/>
+        <Button fx:id="deleteButton" text="Delete Car" onAction="#handleDeleteCar"/>
+        <Button fx:id="saveButton" text="Save" onAction="#handleSave"/>
+        <Button fx:id="loadButton" text="Load" onAction="#handleLoad"/>
+    </HBox>
+
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="licensePlateCol" text="License Plate"/>
+            <TableColumn fx:id="nameCol" text="Name"/>
+            <TableColumn fx:id="yearCol" text="Year"/>
+        </columns>
+    </TableView>
+
+</VBox>
